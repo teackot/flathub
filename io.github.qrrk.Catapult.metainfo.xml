@@ -265,13 +265,13 @@
             <description>
                 <ul>
                     <li>Added a game changelog compiled from merged pull requests (thanks to Inglonias).</li>
-                    <p>
-                        Data retrieval from GitHub doesn't always work reliably, especially for DDA,
-                        due to the sheer number of merged PRs in this repository. If you encounter this,
-                        please don't report it as a bug: it's on GitHub's side, and we are aware of it.
-                        We hope this problem is temporary.
-                    </p>
                 </ul>
+                <p>
+                    Data retrieval from GitHub doesn't always work reliably, especially for DDA,
+                    due to the sheer number of merged PRs in this repository. If you encounter this,
+                    please don't report it as a bug: it's on GitHub's side, and we are aware of it.
+                    We hope this problem is temporary.
+                </p>
             </description>
         </release>
         <release version="21.11b" date="2021-11-22">
