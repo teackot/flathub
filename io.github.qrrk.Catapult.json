@@ -1,0 +1,75 @@
+{
+    "app-id": "io.github.qrrk.Catapult",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "22.08",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "catapult.sh",
+    "finish-args": [
+        "--socket=x11",
+        "--socket=pulseaudio",
+        "--share=ipc",
+        "--share=network",
+        "--device=dri",
+        "--filesystem=~:create",
+        "--filesystem=~/.catapult:rw"
+    ],
+    "modules": [
+        {
+            "name": "catapult",
+            "buildsystem": "simple",
+            "build-commands": [
+                "ls",
+                "unzip Godot_v3.5.1-stable_linux_headless.64.zip",
+                "unzip Godot_v3.5.1-stable_export_templates.tpz",
+
+                "mkdir /app/bin",
+                "./Godot_v3.5.1-stable_linux_headless.64 --export \"Linux/X11\"",
+
+                "install -Dm755 catapult.sh /app/bin/catapult.sh",
+
+                "install -Dm644 io.github.qrrk.Catapult.desktop /app/share/applications/io.github.qrrk.Catapult.desktop",
+                "install -Dm644 icons/appicon.svg /app/share/icons/hicolor/scalable/apps/io.github.qrrk.Catapult.svg"
+            ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/teackot/Catapult.git",
+                    "commit": "49aa2f90dd05e582f820874ee8537d131db3ecbf"
+                },
+                {
+                    "type": "file",
+                    "path": "catapult.sh"
+                },
+
+                {
+                    "type": "file",
+                    "path": "io.github.qrrk.Catapult.desktop"
+                },
+                {
+                    "type": "file",
+                    "path": "io.github.qrrk.Catapult.metainfo.xml"
+                },
+
+                {
+                    "type": "dir",
+                    "path": "resources"
+                },
+                {
+                    "type": "file",
+                    "path": "export_presets.cfg"
+                },
+
+                {
+                    "type": "file",
+                    "url": "https://github.com/godotengine/godot/releases/download/3.5.1-stable/Godot_v3.5.1-stable_linux_headless.64.zip",
+                    "sha512": "9f7a7101aa3985b1662a9b30f3e9b3a1add9b114e4212faac126329c3bb284620fb4e98cdbc5c652383d897e5e18ce7602abba8cf601650f994c7dd45b7b9781"
+                },
+                {
+                    "type": "file",
+                    "url": "https://github.com/godotengine/godot/releases/download/3.5.1-stable/Godot_v3.5.1-stable_export_templates.tpz",
+                    "sha512": "3ddf9ce76393ab8284105bcc7faa6102915e46ba7dee951374a9d120a9f4ab876f0162e7d503c5e67f1ac6953c9db16f7e511dfd0e1531aea91b2441837d5782"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright [year] [name] -->
+<component type="desktop-application">
+    <id>io.github.qrrk.Catapult</id>
+    <name>Catapult</name>
+
+    <summary>A cross-platform launcher for Cataclysm: DDA and BN</summary>
+
+    <metadata_license>CC-BY-SA-4.0</metadata_license>
+    <project_license>MIT</project_license>
+
+    <developer_name>qrrk</developer_name>
+
+    <url type="homepage">https://github.com/qrrk/Catapult</url>
+    <url type="bugtracker">https://github.com/qrrk/Catapult/issues</url>
+
+    <recommends>
+        <control>keyboard</control>
+    </recommends>
+    <supports>
+        <control>console</control>
+        <control>gamepad</control>
+    </supports>
+
+    <description>
+        <p>
+            Catapult is a cross-platform launcher and content manager for Cataclysm: Dark Days Ahead
+            and Cataclysm: Bright Nights. It is in part inspired by earlier versions of Rémy Roy's launcher.
+        </p>
+        <p>Features:</p>
+        <ul>
+            <li>Automatic game download and installation (stable or experimental releases).</li>
+            <li>Ability to install multiple versions of the game and switch between them.</li>
+            <li>Updating the game while preserving user data (saved games, settings, mods, etc).</li>
+            <li>Mod management: Kenan Modpack download and complete or selective installation.</li>
+            <li>Automatic download and installation of soundpacks.</li>
+            <li>Customization of game fonts.</li>
+            <li>Saved game backups.</li>
+            <li>Multilingual interface.</li>
+            <li>
+                Good support for HiDPI displays: UI is automatically scaled with screen DPI,
+                with ability to adjust the scale manually.
+            </li>
+        </ul>
+        <p>
+            Cataclysm: Dark Days Ahead is a turn-based survival game set in a post-apocalyptic
+            world. Scavenge, explore, craft, build, farm, repair and modify vehicles, install bionics,
+            mutate, defend against zombies and countless other monstrosities - all in a limitless,
+            procedurally generated world!
+        </p>
+        <p>
+            Cataclysm: Bright Nights. Reject pedantry, embrace !!fun!!. This fork takes the game back
+            to its sci-fi roguelike roots and reverts many controversial changes by the DDA team
+            (pockets, proficiencies, freezing, and more). Special attention is paid to combat, game
+            balance and pacing.
+        </p>
+    </description>
+
+    <screenshots>
+        <screenshot type="default">
+            <image>https://user-images.githubusercontent.com/19731636/183306856-65921632-0173-4a66-9632-a5ba1285943d.png</image>
+        </screenshot>
+    </screenshots>
+
+    <releases>
+        <release version="22.08a" date="2022-08-07">
+            <description>
+                <ul>
+                    <li>
+                        <p>
+                            It is now possible to have multiple versions of the game installed at the
+                            same time and switch between them.
+                        </p>
+                        <ul>
+                            <li>
+                                To install an additional copy of the game, simply uncheck the
+                                "Update current active install" checkbox.
+                            </li>
+                            <li>
+                                Out of all installed copies of the game, one is always considered
+                                "active", i.e. being used at the moment. This version will be started
+                                when you click Play/Resume.
+                            </li>
+                            <li>
+                                (!) Keep in mind that the userdata folder (containing saves, game settings
+                                and so on) is shared between all game installs, so beware of breakages or
+                                data corruption when switching between too-distant versions (e.g. stable
+                                and experimental).
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        UI scaling was reworked once again. The 2D scaling mode just didn't look good
+                        enough despite my efforts, so I bit the bullet and implemented proper scaling
+                        for UI themes. Finally, crisp text and outlines at any scale!
+                    </li>
+                    <li>Spanish translation by @JuaniElias.</li>
+                    <li>Polish translation by @nheve.</li>
+                    <li>Added the soundpack CC-Sounds.</li>
+                    <li>You can now set whether to keep the launcher open after starting the game.</li>
+                    <li>
+                        An unofficial AUR package is now available (catapult-bin,
+                        maintained by @AriaMoradi).
+                    </li>
+                </ul>
+            </description>
+        </release>
+        <release version="22.03c" date="2022-03-23">
+            <description>
+                <p>
+                    This is a big one. If you are updating from an earlier version,
+                    read the warning below!
+                </p>
+                <ul>
+                    <li>
+                        <p>
+                            User data (saves, settings, custom mods, sounds, etc.) is now stored
+                            separately from game installation itself.
+                        </p>
+                        <p>
+                            This means no files need to be "migrated" to the new version when updating,
+                            since only the game itself is deleted and replaced, not user data.
+                            Consequently, all migration-related settings have been removed.
+                        </p>
+                        <p>
+                            (!) Important: This change breaks compatibility with previous versions of the
+                            launcher. If you are updating your existing setup, a manual intervention is
+                            required:
+                        </p>
+                        <ul>
+                            <li>
+                                Move config, font, graveyard, memorial, mods, save, sound, templates
+                                from dda/current to dda/userdata.
+                            </li>
+                            <li>
+                                If you have any custom tilesets, move them from dda/current/gfx
+                                to dda/userdata/gfx.
+                            </li>
+                        </ul>
+                        <p>
+                            The paths above are for C:DDA. For C:BN, use bn/current/*
+                            and bn/userdata/* instead.
+                        </p>
+                    </li>
+                    <li>
+                        You can now quick-load your last played world in one click, skipping the main menu.
+                    </li>
+                    <li>
+                        Czech language has been added by @Elinvynia.
+                    </li>
+                    <li>Interface language can now be changed without restarting the launcher.</li>
+                    <li>
+                        Four extra themes have been added. Catapult now has 3 dark and 2 light
+                        themes to choose from.
+                    </li>
+                    <li>
+                        A compressed format is now used for themes. This made the app smaller and
+                        faster to load, even with all the new themes.
+                    </li>
+                </ul>
+            </description>
+        </release>
+        <release version="22.03b" date="2022-03-12">
+            <description>
+                <p>We already have another localization: @raylemon has translated Catapult into French!</p>
+                <ul>
+                    <li>Added French translation.</li>
+                    <li>
+                        Translation files have been reorganized. Previously, almost all translation data
+                        was stored in one large file, which was getting increasingly unwieldy as more
+                        languages were added. Now it is much more granular and manageable.
+                    </li>
+                </ul>
+            </description>
+        </release>
+        <release version="22.03a" date="2022-03-09">
+            <description>
+                <p>
+                    In less than two weeks since translation infrastructure was added,
+                    we already have the first contribution! Thank you, @dyxxzgc!
+                </p>
+                <ul>
+                    <li>Added Simplified Chinese translation carried out by @dyxxzgc.</li>
+                    <li>
+                        Executable size has slightly increased due to additional
+                        font required for Chinese.
+                    </li>
+                </ul>
+                <p>
+                    Note: there are no other changes whatsoever compared to the previous release.
+                    If you aren't interested in the Chinese translation, you don't have to update.
+                </p>
+            </description>
+        </release>
+        <release version="22.02b" date="2022-02-26">
+            <description>
+                <p>A major update that introduces translations and improved UI.</p>
+                <ul>
+                    <li>
+                        Translations have been implemented. Now new languages can be added simply by
+                        editing the CSV files in Excel, LibreOffice, or even in the Notepad.
+                    </li>
+                    <li>
+                        Russian language is now supported in the launcher. Right now this is the only
+                        language besides English that's been added, but hopefully more will
+                        be contributed in the future.
+                    </li>
+                </ul>
+                <p>Also, multiple UI improvements have been made:</p>
+                <ul>
+                    <li>
+                        UI scaling was handed off to the engine instead of essentially micro-managing
+                        the sizes of all elements from code. Now Catapult uses the 2d viewport scaling
+                        mode of Godot, which also isn't perfect (see below), but it makes the UI look very
+                        consistent at different scales and gets rid of occasional oddly sized elements and
+                        visual glitches.
+                    </li>
+                    <li>
+                        Many UI tweaks were done, mainly to make the interface more compact.
+                        Font was made smaller, element spacing was reduced in many places.
+                        If you had a custom scale set, you may have to re-adjust it.
+                    </li>
+                    <li>
+                        Launcher window is now resizable, which was made easy by the new scaling method.
+                        Window size and position are remembered between sessions.
+                    </li>
+                </ul>
+                <p>Known issues:</p>
+                <ul>
+                    <li>Text may look slightly blurry at non-integer scales.</li>
+                    <li>
+                        UI scales below 100% look bad. I can only hope that barely anyone will have
+                        to use them, now that the window is more compact.
+                    </li>
+                </ul>
+            </description>
+        </release>
+        <release version="22.02a" date="2022-02-20">
+            <description>
+                <ul>
+                    <li>
+                        The first iteration of savegame backups is now live, thanks to xuvatilavv!
+                        For now, backups can only be done manually. Beware that when a backup is restored,
+                        it replaces all contents of the save folder!
+                    </li>
+                    <li>Changelog link was moved to a more prominent location.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="21.12c" date="2021-12-24">
+            <description>
+                <ul>
+                    <li>Added 0.F-3 stable release on Windows.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="21.12b" date="2021-12-21">
+            <description>
+                <ul>
+                    <li>Changelog now loads faster and works a lot more reliably.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="21.12a" date="2021-12-17">
+            <description>
+                <ul>
+                    <li>Added a game changelog compiled from merged pull requests (thanks to Inglonias).</li>
+                    <p>
+                        Data retrieval from GitHub doesn't always work reliably, especially for DDA,
+                        due to the sheer number of merged PRs in this repository. If you encounter this,
+                        please don't report it as a bug: it's on GitHub's side, and we are aware of it.
+                        We hope this problem is temporary.
+                    </p>
+                </ul>
+            </description>
+        </release>
+        <release version="21.11b" date="2021-11-22">
+            <description>
+                <ul>
+                    <li>Fixed Kenan modpack installation again.</li>
+                    <li>Added an option to include archived mods when installing Kenan modpack.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="21.11a" date="2021-11-13">
+            <description>
+                <ul>
+                    <li>Fixed Kenan modpack installation.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="21.09f" date="2021-09-23">
+            <description>
+                <p>
+                    This time, a partial rework of mod management. It addresses the problem of being
+                    unable to install mods that come with the game but are marked as "obsolete".
+                    Such mods are no longer considered by the launcher as "already installed", letting
+                    you install a second (hopefully updated) copy of them with a modified ID
+                    (to avoid errors).
+                </p>
+            </description>
+        </release>
+        <release version="21.09e" date="2021-09-19">
+            <description>
+                <p>
+                    This is the first big feature update. Catapult now lets you customize in-game fonts
+                    by selecting from several hand-picked typefaces built into the launcher.
+                    This will be especially handy for owners of 2K/4K monitors.
+                </p>
+                <p>
+                    If you've customized game fonts manually before, you'll know that for some fonts
+                    you need to find a good combination of font width, height and size by trial and error.
+                    For fonts offered in Catapult, this work has already been done, and correct values
+                    will be put in automatically when you assign the font. Font sizes for UI, map and
+                    overmap can also be adjusted right from the launcher.
+                </p>
+            </description>
+        </release>
+        <release version="21.09d" date="2021-09-13">
+            <description>
+                <ul>
+                    <li>Fixed extraction errors when the path contains spaces.</li>
+                    <li>UI scaling tweaks.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="21.09c" date="2021-09-12">
+            <description>
+                <ul>
+                    <li>Added a button to quickly open the game folder.</li>
+                    <li>Switched from Powershell to bundled UnZip for archive extraction, so Windows 7 is now truly supported.</li>
+                    <li>Updated some UI icons.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="21.09b" date="2021-09-10">
+            <description>
+                <ul>
+                    <li>Better debug mode for troubleshooting.</li>
+                    <li>One small UI fix.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="21.09a" date="2021-09-09">
+            <description>
+                <p>The first public release of the launcher.</p>
+            </description>
+        </release>
+    </releases>
+
+    <launchable type="desktop-id">io.github.qrrk.Catapult.desktop</launchable>
+
+    <languages>
+        <lang>en</lang>
+        <lang>cs</lang>
+        <lang>es</lang>
+        <lang>fr</lang>
+        <lang>pl</lang>
+        <lang>ru</lang>
+        <lang>tr</lang>
+        <lang>zh</lang>
+    </languages>
+
+    <content_rating type="oars-1.1">
+        <content_attribute id="violence-fantasy">intense</content_attribute>
+        <content_attribute id="violence-bloodshed">intense</content_attribute>
+        <content_attribute id="violence-desecration">intense</content_attribute>
+        <content_attribute id="violence-slavery">intense</content_attribute>
+        <content_attribute id="drugs-alcohol">moderate</content_attribute>
+        <content_attribute id="drugs-narcotics">moderate</content_attribute>
+        <content_attribute id="drugs-tobacco">moderate</content_attribute>
+        <content_attribute id="sex-nudity">intense</content_attribute>
+        <content_attribute id="sex-themes">moderate</content_attribute>
+        <content_attribute id="language-profanity">moderate</content_attribute>
+        <content_attribute id="language-humor">mild</content_attribute>
+      </content_rating>    
+</component>

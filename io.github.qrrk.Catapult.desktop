@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Catapult
+Comment=A cross-platform launcher for Cataclysm: DDA and BN
+Keywords=cataclysm;cdda;dda;cbn;bn;zombie;survival;
+Exec=catapult.sh
+Terminal=false
+Icon=io.github.qrrk.Catapult
+Type=Application
+Categories=Game;RolePlaying;
