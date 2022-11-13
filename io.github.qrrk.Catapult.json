@@ -27,6 +27,9 @@
 
                 "install -Dm755 catapult.sh /app/bin/catapult.sh",
 
+                "mkdir -p /app/etc",
+                "install -Dm644 catapult_settings.json /app/etc/catapult_settings.json",
+
                 "install -Dm644 io.github.qrrk.Catapult.desktop /app/share/applications/io.github.qrrk.Catapult.desktop",
                 "install -Dm644 icons/appicon.svg /app/share/icons/hicolor/scalable/apps/io.github.qrrk.Catapult.svg"
             ],
@@ -34,11 +37,15 @@
                 {
                     "type": "git",
                     "url": "https://github.com/teackot/Catapult.git",
-                    "commit": "49aa2f90dd05e582f820874ee8537d131db3ecbf"
+                    "commit": "6a9f711ee9054126aac93b074d3e9c4944032218"
                 },
                 {
                     "type": "file",
                     "path": "catapult.sh"
+                },
+                {
+                    "type": "file",
+                    "path": "catapult_settings.json"
                 },
 
                 {
